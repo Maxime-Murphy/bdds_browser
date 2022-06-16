@@ -337,7 +337,7 @@ else:
             # st.write("Enter your search term separated by a comma")
             if sel_geotype == "Country":
                 st.caption("Search INDICATOR_ID")
-            searchTermList = st.text_input("Enter your search terms separated by a comma")
+            searchTermList = st.text_input(label="", value="Enter a list of search terms separated by commas" )
             searchTermList = searchTermList.replace(" ", "").split(",")
             #Should remove any trailing comma to ensure we don't pass an empty string as searche which returns 
             search_list = my_archive.searchList_II(searchTermList, df, sel_search_var)
@@ -353,7 +353,7 @@ else:
                     st.session_state.AddSearch_reg = True       #session state for triggering callback function
                     callback_reg()
             
-            st.button('Add search results to the selected items', on_click=callback_search, key="b_add_search_list")
+            st.button('Add search results to your selection', on_click=callback_search, key="b_add_search_list")
             # st.session_state.AddSearch
             
             #st.write("Number of item matched: ", len(search_list))

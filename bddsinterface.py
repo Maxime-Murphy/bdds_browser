@@ -327,7 +327,7 @@ else:
                 sel_search_var = "INDICATOR_ID"
                 # st.session_state.radio_geo
             elif sel_geotype == "Region":
-                sel_search_var = st.radio('Pick search variable', ["Indicator", "Region"], key="radio_geo")
+                sel_search_var = st.radio('Pick search variable', ["INDICATOR_ID", "REGION_ID"], key="radio_geo")
                 if sel_search_var == "Indicator":
                     sel_search_var = "INDICATOR_ID"
                 else:
@@ -336,7 +336,7 @@ else:
         
             # st.write("Enter your search term separated by a comma")
             if sel_geotype == "Country":
-                st.caption("Search indicators")
+                st.caption("Search INDICATOR_ID")
             searchTermList = st.text_input("Enter your search terms separated by a comma")
             searchTermList = searchTermList.replace(" ", "").split(",")
             #Should remove any trailing comma to ensure we don't pass an empty string as searche which returns 
